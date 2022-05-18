@@ -1,4 +1,18 @@
 package com.sofka.petProjectDDD.section.events;
 
-public class FloorAssigned {
+import co.com.sofka.domain.generic.DomainEvent;
+import com.sofka.petProjectDDD.section.values.Floor;
+
+public class FloorAssigned extends DomainEvent {
+
+    private final Floor floor;
+
+    public FloorAssigned(String type, Floor floor) {
+        super("com.sofka.perProjectDDD.events");
+        this.floor = floor;
+    }
+
+    public Floor getFloor() {
+        return floor;
+    }
 }

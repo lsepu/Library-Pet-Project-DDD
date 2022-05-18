@@ -1,4 +1,25 @@
 package com.sofka.petProjectDDD.section.events;
 
-public class BookEditorialUpdated {
+import co.com.sofka.domain.generic.DomainEvent;
+import com.sofka.petProjectDDD.section.values.BookId;
+import com.sofka.petProjectDDD.section.values.Editorial;
+
+public class BookEditorialUpdated extends DomainEvent {
+
+    private final BookId bookId;
+    private final Editorial editorial;
+
+    public BookEditorialUpdated(String type, BookId bookId, Editorial editorial) {
+        super("com.sofka.perProjectDDD.events");
+        this.bookId = bookId;
+        this.editorial = editorial;
+    }
+
+    public BookId getBookId() {
+        return bookId;
+    }
+
+    public Editorial getEditorial() {
+        return editorial;
+    }
 }

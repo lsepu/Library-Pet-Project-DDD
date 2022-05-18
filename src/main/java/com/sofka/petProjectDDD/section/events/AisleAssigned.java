@@ -1,4 +1,18 @@
 package com.sofka.petProjectDDD.section.events;
 
-public class AisleAssigned {
+import co.com.sofka.domain.generic.DomainEvent;
+import com.sofka.petProjectDDD.section.values.Aisle;
+
+public class AisleAssigned extends DomainEvent {
+
+    private final Aisle aisle;
+
+    public AisleAssigned(String type, Aisle aisle) {
+        super("com.sofka.petProjectDDD.events");
+        this.aisle = aisle;
+    }
+
+    public Aisle getAisle() {
+        return aisle;
+    }
 }
