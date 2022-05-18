@@ -1,4 +1,35 @@
 package com.sofka.petProjectDDD.section.values;
 
-public class Title {
+import co.com.sofka.domain.generic.ValueObject;
+
+import java.util.Objects;
+
+public class Title implements ValueObject<String> {
+
+    public final String value;
+
+    public Title(String value) {
+        this.value = Objects.requireNonNull(value);
+        if(this.value.isBlank()){
+            throw new IllegalArgumentException("The book title cannot be empty");
+        }
+    }
+
+    public String value() {
+        return value;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Aisle aisle = (Aisle) o;
+        return Objects.equals(value, aisle.value);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(value);
+    }
+
 }

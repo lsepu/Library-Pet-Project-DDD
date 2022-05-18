@@ -4,14 +4,14 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
-public class Editorial implements ValueObject<String> {
+public class NumberOfPages implements ValueObject<String> {
 
     public final String value;
 
-    public Editorial(String value) {
+    public NumberOfPages(String value) {
         this.value = Objects.requireNonNull(value);
         if(this.value.isBlank()){
-            throw new IllegalArgumentException("The Editorial cannot be empty");
+            throw new IllegalArgumentException("The book title cannot be empty");
         }
     }
 
@@ -31,6 +31,5 @@ public class Editorial implements ValueObject<String> {
     public int hashCode() {
         return Objects.hash(value);
     }
-
 
 }

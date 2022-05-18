@@ -1,4 +1,20 @@
 package com.sofka.petProjectDDD.lending.values;
 
-public class LendingId {
+import co.com.sofka.domain.generic.Identity;
+
+public class LendingId extends Identity {
+
+    public LendingId(){
+
+    }
+
+    private LendingId(String id){
+        super(id);
+    }
+
+    public static LendingId of (String id){
+        return new LendingId(id);
+    }
+
+
 }
