@@ -2,16 +2,10 @@ package com.sofka.petProjectDDD.lending;
 
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
-import com.sofka.petProjectDDD.client.events.LendingAdded;
+import com.sofka.petProjectDDD.lending.events.LendingAdded;
 import com.sofka.petProjectDDD.lending.events.*;
 import com.sofka.petProjectDDD.lending.values.*;
 import com.sofka.petProjectDDD.lending.values.Title;
-import com.sofka.petProjectDDD.section.Book;
-import com.sofka.petProjectDDD.section.Librarian;
-import com.sofka.petProjectDDD.section.Section;
-import com.sofka.petProjectDDD.section.SectionChange;
-import com.sofka.petProjectDDD.section.events.SectionAdded;
-import com.sofka.petProjectDDD.section.values.*;
 
 import java.util.List;
 import java.util.Objects;
@@ -25,9 +19,9 @@ public class Lending extends AggregateEvent<LendingId> {
     protected LendingDate lendingDate;
     protected DevolutionDate devolutionDate;
 
-    public Lending(LendingId entityId, LendingDate lendingDate, DevolutionDate devolutionDate, Set<Item> items, Fine fine) {
+    public Lending(LendingId entityId, LendingDate lendingDate, DevolutionDate devolutionDate, Set<Item> items) {
         super(entityId);
-        appendChange(new LendingAdded((entityId, items, fine, lendingDate, devolutionDate));
+        appendChange(new LendingAdded(entityId, items, devolutionDate, lendingDate));
         subscribe(new LendingChange(this));
     }
 
@@ -92,7 +86,7 @@ public class Lending extends AggregateEvent<LendingId> {
         appendChange(new ItemQuantityUpdated(itemId, quantity));
     }
 
-    protected Optional<Book> getItemById(ItemId itemId) {
+    protected Optional<Item> getItemById(ItemId itemId) {
         return items
                 .stream()
                 .filter(item -> item.identity().equals(itemId))

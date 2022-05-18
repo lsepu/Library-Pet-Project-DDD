@@ -13,14 +13,12 @@ public class AddLending extends Command {
 
     private final LendingId lendingId;
     private final Set<Item> items;
-    private final Fine fine;
     private final LendingDate lendingDate;
     private final DevolutionDate devolutionDate;
 
-    public AddLending(LendingId lendingId, Set<Item> items, Fine fine, LendingDate lendingDate, DevolutionDate devolutionDate) {
+    public AddLending(LendingId lendingId, Set<Item> items, LendingDate lendingDate, DevolutionDate devolutionDate) {
         this.lendingId = lendingId;
         this.items = items;
-        this.fine = fine;
         this.lendingDate = lendingDate;
         this.devolutionDate = devolutionDate;
     }
@@ -31,10 +29,6 @@ public class AddLending extends Command {
 
     public Set<Item> getItems() {
         return items;
-    }
-
-    public Fine getFine() {
-        return fine;
     }
 
     public LendingDate getLendingDate() {

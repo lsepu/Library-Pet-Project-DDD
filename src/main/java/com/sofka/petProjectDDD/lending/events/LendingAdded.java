@@ -13,15 +13,13 @@ public class LendingAdded extends DomainEvent {
 
     private final LendingId lendingId;
     private final Set<Item> items;
-    private final Fine fine;
     private final LendingDate lendingDate;
     private final DevolutionDate devolutionDate;
 
-    public LendingAdded(LendingId lendingId, Set<Item> items, Fine fine, DevolutionDate devolutionDate, LendingDate lendingDate) {
+    public LendingAdded(LendingId lendingId, Set<Item> items,  DevolutionDate devolutionDate, LendingDate lendingDate) {
         super("com.sofka.petProjectDDD.events");
         this.lendingId = lendingId;
         this.items = items;
-        this.fine = fine;
         this.devolutionDate = devolutionDate;
         this.lendingDate = lendingDate;
     }
@@ -32,10 +30,6 @@ public class LendingAdded extends DomainEvent {
 
     public Set<Item> getItems() {
         return items;
-    }
-
-    public Fine getFine() {
-        return fine;
     }
 
     public DevolutionDate getDevolutionDate() {
