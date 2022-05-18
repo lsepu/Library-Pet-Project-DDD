@@ -1,23 +1,26 @@
 package com.sofka.petProjectDDD.section.commands;
 
 import co.com.sofka.domain.generic.Command;
-import com.sofka.petProjectDDD.section.values.Editorial;
-import com.sofka.petProjectDDD.section.values.Genre;
-import com.sofka.petProjectDDD.section.values.NumberOfPages;
-import com.sofka.petProjectDDD.section.values.Title;
+import com.sofka.petProjectDDD.section.values.*;
 
 public class AddBook extends Command {
 
+    private final BookId bookId;
     private final NumberOfPages numberOfPages;
     private final Genre genre;
     private final Editorial editorial;
     private final Title title;
 
-    public AddBook(NumberOfPages numberOfPages, Genre genre, Editorial editorial, Title title) {
+    public AddBook(BookId bookId, NumberOfPages numberOfPages, Genre genre, Editorial editorial, Title title) {
+        this.bookId = bookId;
         this.numberOfPages = numberOfPages;
         this.genre = genre;
         this.editorial = editorial;
         this.title = title;
+    }
+
+    public BookId getBookId() {
+        return bookId;
     }
 
     public NumberOfPages getNumberOfPages() {
