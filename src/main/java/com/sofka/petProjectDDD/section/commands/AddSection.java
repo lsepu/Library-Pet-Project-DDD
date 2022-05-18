@@ -19,7 +19,6 @@ public class AddSection extends Command {
     private final Aisle aisle;
     private final Floor floor;
     private final Librarian librarian;
-    private final Set<Book> books;
 
     public AddSection(SectionId sectionId, Name name, Aisle aisle, Floor floor, Librarian librarian) {
         this.sectionId = sectionId;
@@ -27,7 +26,6 @@ public class AddSection extends Command {
         this.aisle = aisle;
         this.floor = floor;
         this.librarian = librarian;
-        this.books = new TreeSet<>();
     }
 
     public Librarian getLibrarian() {

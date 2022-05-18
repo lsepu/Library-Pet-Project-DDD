@@ -9,7 +9,7 @@ public class BookEditorialUpdated extends DomainEvent {
     private final BookId bookId;
     private final Editorial editorial;
 
-    public BookEditorialUpdated(String type, BookId bookId, Editorial editorial) {
+    public BookEditorialUpdated(BookId bookId, Editorial editorial) {
         super("com.sofka.perProjectDDD.events");
         this.bookId = bookId;
         this.editorial = editorial;

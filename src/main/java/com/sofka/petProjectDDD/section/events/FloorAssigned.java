@@ -7,7 +7,7 @@ public class FloorAssigned extends DomainEvent {
 
     private final Floor floor;
 
-    public FloorAssigned(String type, Floor floor) {
+    public FloorAssigned(Floor floor) {
         super("com.sofka.perProjectDDD.events");
         this.floor = floor;
     }

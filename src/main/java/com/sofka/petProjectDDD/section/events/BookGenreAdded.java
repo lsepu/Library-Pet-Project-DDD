@@ -9,7 +9,7 @@ public class BookGenreAdded extends DomainEvent {
     private final BookId bookId;
     private final Genre genre;
 
-    public BookGenreAdded(String type, BookId bookId, Genre genre) {
+    public BookGenreAdded(BookId bookId, Genre genre) {
         super("com.sofka.perProjectDDD.events");
         this.bookId = bookId;
         this.genre = genre;

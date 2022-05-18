@@ -21,7 +21,7 @@ public class Section extends AggregateEvent<SectionId> {
 
     public Section(SectionId entityId, Name name, Librarian librarian, Aisle aisle, Floor floor) {
         super(entityId);
-        appendChange(new SectionAdded(name, librarian, aisle, floor));
+        appendChange(new SectionAdded(name, aisle, floor, librarian));
         subscribe(new SectionChange(this));
     }
 
@@ -37,14 +37,14 @@ public class Section extends AggregateEvent<SectionId> {
     }
 
     //behaviors
-    public void addBook(BookId bookId, NumberOfPages numberOfPages, Genre genre, Editorial editorial, Title title){
+    public void addBook(BookId bookId, NumberOfPages numberOfPages, Set<Genre> genres, Editorial editorial, Title title){
         Objects.requireNonNull(bookId);
+        Objects.requireNonNull(genres);
         Objects.requireNonNull(numberOfPages);
-        Objects.requireNonNull(genre);
         Objects.requireNonNull(editorial);
         Objects.requireNonNull(title);
 
-        appendChange(new BookAdded(bookId, numberOfPages, genre, editorial, title)).apply();
+        appendChange(new BookAdded(bookId, numberOfPages, genres, editorial, title)).apply();
     }
 
     public void addBookGenre(BookId bookId, Genre genre){

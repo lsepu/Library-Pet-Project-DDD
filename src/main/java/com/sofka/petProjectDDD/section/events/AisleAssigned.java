@@ -7,7 +7,7 @@ public class AisleAssigned extends DomainEvent {
 
     private final Aisle aisle;
 
-    public AisleAssigned(String type, Aisle aisle) {
+    public AisleAssigned(Aisle aisle) {
         super("com.sofka.petProjectDDD.events");
         this.aisle = aisle;
     }

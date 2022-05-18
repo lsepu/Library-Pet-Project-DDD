@@ -12,7 +12,7 @@ public class Book extends Entity<BookId> {
     private Set<Genre> genres;
     private NumberOfPages numberOfPages;
 
-    public Book(BookId entityId, Title title, Editorial editorial, Set<Genre> genres, NumberOfPages numberOfPages) {
+    public Book(BookId entityId, NumberOfPages numberOfPages,  Editorial editorial, Set<Genre> genres,Title title ) {
         super(entityId);
         this.title = title;
         this.editorial = editorial;
