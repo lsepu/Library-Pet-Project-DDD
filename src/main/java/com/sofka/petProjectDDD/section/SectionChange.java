@@ -1,4 +1,10 @@
 package com.sofka.petProjectDDD.section;
 
-public class SectionChange {
+import co.com.sofka.domain.generic.EventChange;
+
+public class SectionChange extends EventChange {
+    public SectionChange(Section section){
+
+    }
+
 }
