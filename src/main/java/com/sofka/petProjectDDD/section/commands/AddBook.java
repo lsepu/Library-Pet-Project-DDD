@@ -9,14 +9,14 @@ public class AddBook extends Command {
 
     private final BookId bookId;
     private final NumberOfPages numberOfPages;
-    private final Set<Genre> genre;
+    private final Set<Genre> genres;
     private final Editorial editorial;
     private final Title title;
 
     public AddBook(BookId bookId, NumberOfPages numberOfPages, Set<Genre> genres, Editorial editorial, Title title) {
         this.bookId = bookId;
         this.numberOfPages = numberOfPages;
-        this.genre = genres;
+        this.genres = genres;
         this.editorial = editorial;
         this.title = title;
     }
@@ -29,8 +29,8 @@ public class AddBook extends Command {
         return numberOfPages;
     }
 
-    public Genre getGenre() {
-        return genre;
+    public Set<Genre> getGenre() {
+        return genres;
     }
 
     public Editorial getEditorial() {

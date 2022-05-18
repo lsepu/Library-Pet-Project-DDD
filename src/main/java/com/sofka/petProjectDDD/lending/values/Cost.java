@@ -1,4 +1,37 @@
 package com.sofka.petProjectDDD.lending.values;
 
-public class Cost {
+import co.com.sofka.domain.generic.ValueObject;
+import com.sofka.petProjectDDD.section.values.Aisle;
+
+import java.util.Objects;
+
+public class Cost implements ValueObject<Double> {
+
+    public final Double value;
+
+    public Cost(Double value) {
+        this.value = Objects.requireNonNull(value);
+        if (this.value < 0) {
+            throw new IllegalArgumentException("The fine cost cannot be a negative number");
+        }
+    }
+
+    public Double value() {
+        return value;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Aisle aisle = (Aisle) o;
+        return Objects.equals(value, aisle.value);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(value);
+    }
+
+
 }

@@ -5,15 +5,16 @@ import com.sofka.petProjectDDD.section.Librarian;
 import com.sofka.petProjectDDD.section.values.Aisle;
 import com.sofka.petProjectDDD.section.values.Floor;
 import com.sofka.petProjectDDD.section.values.Name;
+import com.sofka.petProjectDDD.section.values.SectionName;
 
 public class SectionAdded extends DomainEvent{
 
-    private final Name name;
+    private final SectionName name;
     private final Aisle aisle;
     private final Floor floor;
     private final Librarian librarian;
 
-    public SectionAdded( Name name, Aisle aisle, Floor floor, Librarian librarian) {
+    public SectionAdded( SectionName name, Aisle aisle, Floor floor, Librarian librarian) {
         super("com.sofka.perProjectDDD.events");
         this.name = name;
         this.aisle = aisle;
@@ -21,7 +22,7 @@ public class SectionAdded extends DomainEvent{
         this.librarian = librarian;
     }
 
-    public Name getName() {
+    public SectionName getName() {
         return name;
     }
 

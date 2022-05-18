@@ -1,7 +1,6 @@
 package com.sofka.petProjectDDD.section;
 
 import co.com.sofka.domain.generic.EventChange;
-import com.sofka.petProjectDDD.section.commands.UpdateBookEditorial;
 import com.sofka.petProjectDDD.section.events.*;
 
 import java.util.HashSet;

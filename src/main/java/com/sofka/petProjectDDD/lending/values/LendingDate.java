@@ -3,20 +3,30 @@ package com.sofka.petProjectDDD.lending.values;
 import co.com.sofka.domain.generic.ValueObject;
 import com.sofka.petProjectDDD.section.values.Aisle;
 
+import java.util.Date;
 import java.util.Objects;
 
-public class Title implements ValueObject<String> {
+public class LendingDate implements ValueObject<Date> {
 
-    public final String value;
+    public final Date value;
 
-    public Title(String value) {
+    public LendingDate(Date value) {
         this.value = Objects.requireNonNull(value);
-        if (this.value.isBlank()) {
-            throw new IllegalArgumentException("The title cannot be empty");
+        if(!verifyValidDate(value)){
+            throw new IllegalArgumentException("The date cannot be before today");
         }
     }
 
-    public String value() {
+    public boolean verifyValidDate(Date date){
+        Date currentDate = new Date();
+        if (date.before(currentDate)){
+            return false;
+        }
+        return true;
+    }
+
+
+    public Date value() {
         return value;
     }
 

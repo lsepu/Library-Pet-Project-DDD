@@ -13,13 +13,13 @@ import java.util.Set;
 public class Section extends AggregateEvent<SectionId> {
 
     protected Set<Book> books;
-    protected Name name;
+    protected SectionName name;
     protected Librarian librarian;
     protected Aisle aisle;
     protected Floor floor;
 
 
-    public Section(SectionId entityId, Name name, Librarian librarian, Aisle aisle, Floor floor) {
+    public Section(SectionId entityId, SectionName name, Librarian librarian, Aisle aisle, Floor floor) {
         super(entityId);
         appendChange(new SectionAdded(name, aisle, floor, librarian));
         subscribe(new SectionChange(this));

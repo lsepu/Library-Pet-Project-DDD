@@ -1,18 +1,17 @@
-package com.sofka.petProjectDDD.lending.values;
+package com.sofka.petProjectDDD.section.values;
 
 import co.com.sofka.domain.generic.ValueObject;
-import com.sofka.petProjectDDD.section.values.Aisle;
 
 import java.util.Objects;
 
-public class Title implements ValueObject<String> {
+public class SectionName implements ValueObject<String> {
 
     public final String value;
 
-    public Title(String value) {
+    public SectionName(String value) {
         this.value = Objects.requireNonNull(value);
-        if (this.value.isBlank()) {
-            throw new IllegalArgumentException("The title cannot be empty");
+        if(this.value.isBlank()){
+            throw new IllegalArgumentException("The name cannot be empty");
         }
     }
 
@@ -32,6 +31,4 @@ public class Title implements ValueObject<String> {
     public int hashCode() {
         return Objects.hash(value);
     }
-
-
 }
