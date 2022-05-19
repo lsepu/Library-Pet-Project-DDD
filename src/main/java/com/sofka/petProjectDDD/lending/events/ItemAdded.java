@@ -12,7 +12,7 @@ public class ItemAdded extends DomainEvent {
     private final Title title;
 
     public ItemAdded(ItemId itemId, Quantity quantity, Title title) {
-        super("com.sofka.petProjectDDD.events");
+        super("com.sofka.petProjectDDD.lending.itemadded");
         this.itemId = itemId;
         this.quantity = quantity;
         this.title = title;

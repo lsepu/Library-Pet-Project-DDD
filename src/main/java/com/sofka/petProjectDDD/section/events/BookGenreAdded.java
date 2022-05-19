@@ -10,7 +10,7 @@ public class BookGenreAdded extends DomainEvent {
     private final Genre genre;
 
     public BookGenreAdded(BookId bookId, Genre genre) {
-        super("com.sofka.perProjectDDD.events");
+        super("com.sofka.perProjectDDD.section.bookgenreadded");
         this.bookId = bookId;
         this.genre = genre;
     }

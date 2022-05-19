@@ -8,7 +8,7 @@ public class DevolutionDateChanged extends DomainEvent {
     private final DevolutionDate devolutionDate;
 
     public DevolutionDateChanged(DevolutionDate devolutionDate) {
-        super("com.sofka.petProjectDDD.events");
+        super("com.sofka.petProjectDDD.lending.devolutiondatechanged");
         this.devolutionDate = devolutionDate;
     }
 

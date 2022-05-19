@@ -12,7 +12,7 @@ public class FineAdded extends DomainEvent {
     private final Cost cost;
 
     public FineAdded(FineId fineId, Reason reason, Cost cost) {
-        super("com.sofka.petProjectDDD.events");
+        super("com.sofka.petProjectDDD.lending.fineadded");
         this.fineId = fineId;
         this.reason = reason;
         this.cost = cost;

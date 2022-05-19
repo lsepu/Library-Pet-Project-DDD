@@ -17,7 +17,7 @@ public class LendingAdded extends DomainEvent {
     private final DevolutionDate devolutionDate;
 
     public LendingAdded(LendingId lendingId, Set<Item> items,  DevolutionDate devolutionDate, LendingDate lendingDate) {
-        super("com.sofka.petProjectDDD.events");
+        super("com.sofka.petProjectDDD.lending.lendingadded");
         this.lendingId = lendingId;
         this.items = items;
         this.devolutionDate = devolutionDate;

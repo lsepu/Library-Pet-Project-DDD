@@ -14,7 +14,7 @@ public class BookAdded extends DomainEvent {
     private final Title title;
 
     public BookAdded(BookId bookId, NumberOfPages numberOfPages, Set<Genre> genres, Editorial editorial, Title title) {
-        super("com.sofka.petProjectDDD.events");
+        super("com.sofka.petProjectDDD.section.bookadded");
         this.bookId = bookId;
         this.numberOfPages = numberOfPages;
         this.genres = genres;

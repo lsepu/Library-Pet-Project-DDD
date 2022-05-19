@@ -1,4 +1,4 @@
 package com.sofka.petProjectDDD.client.events;
 
-public class PhoneNumberUpdated {
+public class BookReturned {
 }

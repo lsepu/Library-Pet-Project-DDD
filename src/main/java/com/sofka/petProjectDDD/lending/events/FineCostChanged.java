@@ -10,7 +10,7 @@ public class FineCostChanged extends DomainEvent {
     private final Cost cost;
 
     public FineCostChanged(FineId fineId, Cost cost) {
-        super("com.sofka.petProjectDDD.events");
+        super("com.sofka.petProjectDDD.lending.finecostchanged");
         this.fineId = fineId;
         this.cost = cost;
     }

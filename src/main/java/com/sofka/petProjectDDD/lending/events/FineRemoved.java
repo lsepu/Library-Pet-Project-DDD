@@ -8,7 +8,7 @@ public class FineRemoved extends DomainEvent {
     private final FineId fineId;
 
     public FineRemoved(FineId fineId) {
-        super("com.sofka.petProjectDDD.events");
+        super("com.sofka.petProjectDDD.lending.fineremoved");
         this.fineId = fineId;
     }
 

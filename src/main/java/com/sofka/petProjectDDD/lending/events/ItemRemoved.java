@@ -8,7 +8,7 @@ public class ItemRemoved extends DomainEvent {
     private final ItemId itemId;
 
     public ItemRemoved(ItemId itemId) {
-        super("com.sofka.petProjectDDD.events");
+        super("com.sofka.petProjectDDD.lending.itemremoved");
         this.itemId = itemId;
     }
 

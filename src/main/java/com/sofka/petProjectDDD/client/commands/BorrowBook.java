@@ -1,4 +1,4 @@
 package com.sofka.petProjectDDD.client.commands;
 
-public class AddLending {
+public class BorrowBook{
 }

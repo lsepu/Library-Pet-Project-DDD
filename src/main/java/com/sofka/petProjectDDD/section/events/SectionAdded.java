@@ -15,7 +15,7 @@ public class SectionAdded extends DomainEvent{
     private final Librarian librarian;
 
     public SectionAdded( SectionName name, Aisle aisle, Floor floor, Librarian librarian) {
-        super("com.sofka.perProjectDDD.events");
+        super("com.sofka.perProjectDDD.section.sectionadded");
         this.name = name;
         this.aisle = aisle;
         this.floor = floor;

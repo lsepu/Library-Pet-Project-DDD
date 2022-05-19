@@ -10,7 +10,7 @@ public class ItemQuantityUpdated extends DomainEvent {
     private final Quantity quantity;
 
     public ItemQuantityUpdated(ItemId itemId, Quantity quantity) {
-        super("com.sofka.petProjectDDD.events");
+        super("com.sofka.petProjectDDD.lending.itemquantityupdated");
         this.itemId = itemId;
         this.quantity = quantity;
     }

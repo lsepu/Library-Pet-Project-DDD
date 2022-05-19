@@ -10,7 +10,7 @@ public class LibrarianNameUpdated extends DomainEvent {
     private final Name name;
 
     public LibrarianNameUpdated(LibrarianId librarianId, Name name) {
-        super("com.sofka.perProjectDDD.events");
+        super("com.sofka.perProjectDDD.section.librariannameupdated");
         this.librarianId = librarianId;
         this.name = name;
     }
