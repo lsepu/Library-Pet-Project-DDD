@@ -14,6 +14,9 @@ public class Password implements ValueObject<String> {
         if(this.value.isBlank()){
             throw new IllegalArgumentException("The Password cannot be empty");
         }
+        if(this.value.length() < 7){
+            throw new IllegalArgumentException("The Password length can't be less than 7");
+        }
     }
 
     public String value() {

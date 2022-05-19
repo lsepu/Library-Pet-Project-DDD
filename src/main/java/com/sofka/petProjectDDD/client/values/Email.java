@@ -12,7 +12,7 @@ public class Email implements ValueObject<String> {
     public Email(String value) {
         this.value = Objects.requireNonNull(value);
         if(this.value.isBlank()){
-            throw new IllegalArgumentException("The Emailcannot be empty");
+            throw new IllegalArgumentException("The Email cannot be empty");
         }
         if(!this.value.matches("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"+"[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$")){
             throw new IllegalArgumentException("The email is not valid");
