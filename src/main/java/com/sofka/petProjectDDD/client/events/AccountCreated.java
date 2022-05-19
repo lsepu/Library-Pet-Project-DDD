@@ -11,7 +11,7 @@ public class AccountCreated extends DomainEvent {
     private final Email email;
     private final Password password;
 
-    public AccountCreated(String type, AccountId accountId, Email email, Password password) {
+    public AccountCreated(AccountId accountId, Email email, Password password) {
         super("com.sofka.petProjectDDD.client.accountcreated");
         this.accountId = accountId;
         this.email = email;
@@ -19,5 +19,13 @@ public class AccountCreated extends DomainEvent {
     }
     public AccountId getAccountId() {
         return accountId;
+    }
+
+    public Email getEmail() {
+        return email;
+    }
+
+    public Password getPassword() {
+        return password;
     }
 }

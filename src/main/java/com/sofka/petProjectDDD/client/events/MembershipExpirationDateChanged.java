@@ -10,7 +10,7 @@ public class MembershipExpirationDateChanged extends DomainEvent {
     private final ExpirationDate expirationDate;
 
     public MembershipExpirationDateChanged(MembershipId membershipId, ExpirationDate expirationDate) {
-        super("com.sofka.petProjectDDD.events");
+        super("com.sofka.petProjectDDD.client.membershipexpirationdatechanged");
         this.membershipId = membershipId;
         this.expirationDate = expirationDate;
     }

@@ -11,15 +11,13 @@ import com.sofka.petProjectDDD.lending.values.LendingId;
 public class AddClient extends Command {
 
     private final Name name;
-    private final LendingId lendingId;
     private final Address address;
     private final PhoneNumber phoneNumber;
     private final IdentificationCard identificationCard;
     private final Account account;
 
-    public AddClient(Name name, LendingId lendingId, Address address, PhoneNumber phoneNumber, IdentificationCard identificationCard, Account account) {
+    public AddClient(Name name,Address address, PhoneNumber phoneNumber, IdentificationCard identificationCard, Account account) {
         this.name = name;
-        this.lendingId = lendingId;
         this.address = address;
         this.phoneNumber = phoneNumber;
         this.identificationCard = identificationCard;
@@ -30,9 +28,6 @@ public class AddClient extends Command {
         return name;
     }
 
-    public LendingId getLendingId() {
-        return lendingId;
-    }
 
     public Address getAddress() {
         return address;
