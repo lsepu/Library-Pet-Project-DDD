@@ -23,13 +23,12 @@ public class Genre implements ValueObject<String> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Aisle aisle = (Aisle) o;
-        return Objects.equals(value, aisle.value);
+        Genre genre = (Genre) o;
+        return Objects.equals(value, genre.value);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(value);
     }
-
 }

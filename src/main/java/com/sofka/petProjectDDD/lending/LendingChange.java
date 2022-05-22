@@ -9,7 +9,7 @@ import java.util.HashSet;
 public class LendingChange extends EventChange {
     public LendingChange(Lending lending){
 
-        apply((LendingAdded event) -> {
+        apply((LendingCreated event) -> {
             lending.devolutionDate = event.getDevolutionDate();
             lending.lendingDate = event.getLendingDate();
             lending.fine.changeCost(new Cost(0.0));

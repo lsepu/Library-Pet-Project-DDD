@@ -24,14 +24,12 @@ public class Cost implements ValueObject<Double> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Aisle aisle = (Aisle) o;
-        return Objects.equals(value, aisle.value);
+        Cost cost = (Cost) o;
+        return Objects.equals(value, cost.value);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(value);
     }
-
-
 }

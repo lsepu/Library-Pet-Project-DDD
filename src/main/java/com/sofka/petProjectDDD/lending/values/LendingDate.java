@@ -34,14 +34,12 @@ public class LendingDate implements ValueObject<Date> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Aisle aisle = (Aisle) o;
-        return Objects.equals(value, aisle.value);
+        LendingDate that = (LendingDate) o;
+        return Objects.equals(value, that.value);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(value);
     }
-
-
 }

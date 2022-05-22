@@ -1,14 +1,13 @@
-package com.sofka.petProjectDDD.client.commands;
+package com.sofka.petProjectDDD.client.events;
 
-import co.com.sofka.domain.generic.Command;
+import co.com.sofka.domain.generic.DomainEvent;
 import com.sofka.petProjectDDD.client.Account;
 import com.sofka.petProjectDDD.client.values.Address;
 import com.sofka.petProjectDDD.client.values.IdentificationCard;
 import com.sofka.petProjectDDD.client.values.Name;
 import com.sofka.petProjectDDD.client.values.PhoneNumber;
-import com.sofka.petProjectDDD.lending.values.LendingId;
 
-public class AddClient extends Command {
+public class ClienCreated extends DomainEvent {
 
     private final Name name;
     private final Address address;
@@ -16,7 +15,8 @@ public class AddClient extends Command {
     private final IdentificationCard identificationCard;
     private final Account account;
 
-    public AddClient(Name name,Address address, PhoneNumber phoneNumber, IdentificationCard identificationCard, Account account) {
+    public ClienCreated(Name name, Address address, PhoneNumber phoneNumber, IdentificationCard identificationCard, Account account) {
+        super("com.sofka.petProjectDDD.client.clientadded");
         this.name = name;
         this.address = address;
         this.phoneNumber = phoneNumber;
@@ -24,10 +24,10 @@ public class AddClient extends Command {
         this.account = account;
     }
 
+
     public Name getName() {
         return name;
     }
-
 
     public Address getAddress() {
         return address;

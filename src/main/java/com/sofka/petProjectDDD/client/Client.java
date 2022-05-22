@@ -23,7 +23,7 @@ public class Client extends AggregateEvent<ClientId> {
 
     public Client(ClientId entityId, Name name, Address address, PhoneNumber phoneNumber, IdentificationCard identificationCard, Account account) {
         super(entityId);
-        appendChange(new ClientAdded(name, address, phoneNumber, identificationCard, account ));
+        appendChange(new ClienCreated(name, address, phoneNumber, identificationCard, account ));
         subscribe(new ClientChange(this));
     }
 

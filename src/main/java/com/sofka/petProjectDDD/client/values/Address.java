@@ -20,19 +20,18 @@ public class Address implements ValueObject<String> {
         return value;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Aisle aisle = (Aisle) o;
-        return Objects.equals(value, aisle.value);
+        Address address = (Address) o;
+        return Objects.equals(value, address.value);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(value);
     }
-
-
 }
 

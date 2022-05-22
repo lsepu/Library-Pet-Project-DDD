@@ -25,15 +25,15 @@ public class Password implements ValueObject<String> {
 
     @Override
     public boolean equals(Object o) {
+
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Aisle aisle = (Aisle) o;
-        return Objects.equals(value, aisle.value);
+        Password password = (Password) o;
+        return Objects.equals(value, password.value);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(value);
     }
-
 }

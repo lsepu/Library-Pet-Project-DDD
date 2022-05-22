@@ -24,13 +24,12 @@ public class Name implements ValueObject<String> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Aisle aisle = (Aisle) o;
-        return Objects.equals(value, aisle.value);
+        Name name = (Name) o;
+        return Objects.equals(value, name.value);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(value);
     }
-
 }

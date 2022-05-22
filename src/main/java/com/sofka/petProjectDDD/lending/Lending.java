@@ -2,7 +2,7 @@ package com.sofka.petProjectDDD.lending;
 
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
-import com.sofka.petProjectDDD.lending.events.LendingAdded;
+import com.sofka.petProjectDDD.lending.events.LendingCreated;
 import com.sofka.petProjectDDD.lending.events.*;
 import com.sofka.petProjectDDD.lending.values.*;
 import com.sofka.petProjectDDD.lending.values.Title;
@@ -21,7 +21,7 @@ public class Lending extends AggregateEvent<LendingId> {
 
     public Lending(LendingId entityId, LendingDate lendingDate, DevolutionDate devolutionDate, Set<Item> items) {
         super(entityId);
-        appendChange(new LendingAdded(entityId, items, devolutionDate, lendingDate));
+        appendChange(new LendingCreated(items, devolutionDate, lendingDate));
         subscribe(new LendingChange(this));
     }
 

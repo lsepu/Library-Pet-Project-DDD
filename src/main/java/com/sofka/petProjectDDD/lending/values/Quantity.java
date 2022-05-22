@@ -24,14 +24,12 @@ public class Quantity implements ValueObject<Integer> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Aisle aisle = (Aisle) o;
-        return Objects.equals(value, aisle.value);
+        Quantity quantity = (Quantity) o;
+        return Objects.equals(value, quantity.value);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(value);
     }
-
-
 }

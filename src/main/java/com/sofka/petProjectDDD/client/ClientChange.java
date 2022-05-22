@@ -9,7 +9,7 @@ import java.util.HashSet;
 public class ClientChange extends EventChange {
     public ClientChange(Client client) {
 
-        apply((ClientAdded event) -> {
+        apply((ClienCreated event) -> {
             client.name = event.getName();
             client.address = event.getAddress();
             client.phoneNumber = event.getPhoneNumber();

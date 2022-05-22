@@ -23,8 +23,8 @@ public class SectionName implements ValueObject<String> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Aisle aisle = (Aisle) o;
-        return Objects.equals(value, aisle.value);
+        SectionName that = (SectionName) o;
+        return Objects.equals(value, that.value);
     }
 
     @Override
